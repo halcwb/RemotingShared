@@ -1,6 +1,7 @@
 namespace Shared
 
-type Counter = Shared.Lib.Counter
+type Counter = { Value : int }
+
 
 module Route =
     /// Defines how routes are generated on server and mapped from client

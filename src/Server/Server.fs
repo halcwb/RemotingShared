@@ -25,8 +25,10 @@ let port =
 
 let counterApi = {
     initialCounter = fun () -> async {
-        Lib.Say.someIOAction () |> ignore
-        return { Value = 42 }
+        // get a counter type from an external lib
+        let counter = Counter.Lib.Counter.getCounter ()
+        // map the counter type to the shared counter type
+        return { Value = counter.Value }
     }
 }
 

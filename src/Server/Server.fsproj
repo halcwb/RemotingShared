@@ -6,10 +6,11 @@
     </PropertyGroup>
     <ItemGroup>
         <None Include="paket.references" />
+        <Compile Include="../Shared/Shared.fs" />
         <Compile Include="Server.fs" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\Shared\Shared.fsproj" />
+      <ProjectReference Include="..\Counter.Lib\Counter.Lib.fsproj" />
     </ItemGroup>
     <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

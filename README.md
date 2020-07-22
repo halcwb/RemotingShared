@@ -8,6 +8,14 @@ If you want to expose types from an external library, called Shared.Lib in this 
 This project file has to be referenced by the server and the client. Just the sharing the code file with the client won't work in this case. The problem is that not only the types
 are shared with the client but also code that won't compile on the client side.
 
+In the final commit the problem is solved by copying over the 'external' counter type to the 'shared' counter type. So:
+
+1. The client references a shared code file that contains the shared counter type
+2. The server references the shared code file
+3. The server also references a Counter.Lib which retrieves a counter type by reading a file
+4. The server maps the Counter.Lib counter type to the shared counter type
+
+The counter type from the Counter.Lib cannot be directly referenced or used because of the above mentioned issues. 
 
 ## Install pre-requisites
 
