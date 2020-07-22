@@ -1,6 +1,13 @@
-# SAFE Template
+# RemotingShared
 
-This template can be used to generate a full-stack web application using the [SAFE Stack](https://safe-stack.github.io/). It was created using the dotnet [SAFE Template](https://safe-stack.github.io/docs/template-overview/). If you want to learn more about the template why not start with the [quick start](https://safe-stack.github.io/docs/quickstart/) guide?
+This is a lab project that explores a problem I have with Fable.Remoting. The concept is that you can share types between the client and server and expose a very neat remoting api
+using those types. The caveat is that this works really well when only using a shared code file without any dependencies on external projects that cannot run on the client.
+For example an IO action.
+
+If you want to expose types from an external library, called Shared.Lib in this example, you'l need to create a Shared project file that contains the Shared code file.
+This project file has to be referenced by the server and the client. Just the sharing the code file with the client won't work in this case. The problem is that not only the types
+are shared with the client but also code that won't compile on the client side.
+
 
 ## Install pre-requisites
 
